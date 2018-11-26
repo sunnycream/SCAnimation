@@ -21,7 +21,7 @@
 
     self.myView = [[UIView alloc] initWithFrame:CGRectMake(100, 200, 100, 100)];
     self.myView.backgroundColor = [UIColor redColor];
-    [self.view addSubview:self.myView];
+//    [self.view addSubview:self.myView];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
@@ -31,7 +31,31 @@
 
     //    [self basicAnimation];
     //    [self keyFrameAnimation];
-    [self groupAnimation];
+//    [self groupAnimation];
+    [self gradient];
+}
+
+#pragma mark - 渐变色
+- (void)gradient {
+    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+    gradientLayer.frame = CGRectMake(100, 200, 200, 200);
+    [self.view.layer addSublayer:gradientLayer];
+
+    UIColor *color1 = [UIColor yellowColor];
+    UIColor *color2 = [UIColor greenColor];
+    UIColor *color3 = [UIColor orangeColor];
+    UIColor *color4 = [UIColor brownColor];
+
+    gradientLayer.colors = @[(__bridge id)color1.CGColor,
+                             (__bridge id)color2.CGColor,
+                             (__bridge id)color3.CGColor,
+                             (__bridge id)color4.CGColor];
+    gradientLayer.locations = @[@(0.2),
+                                @(0.6),
+                                @(0.8),
+                                @(0.9)];
+    gradientLayer.startPoint = CGPointMake(0, 0);
+    gradientLayer.endPoint = CGPointMake(1, 0);
 }
 
 #pragma mark - UIViewAnimation

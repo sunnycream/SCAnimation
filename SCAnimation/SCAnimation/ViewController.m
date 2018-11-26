@@ -32,7 +32,47 @@
     //    [self basicAnimation];
     //    [self keyFrameAnimation];
 //    [self groupAnimation];
-    [self gradient];
+//    [self gradient];
+    [self emitter];
+}
+
+- (void)emitter {
+    CAEmitterCell *cell = [[CAEmitterCell alloc] init];
+    cell.contents = (__bridge id)[UIImage imageNamed:@"christmas _tree"].CGImage;
+
+    cell.birthRate = 2;
+
+    //粒子存活时间[4.0, 6.0]
+    cell.lifetime = 5.0;
+//    cell.lifetimeRange = 1.0;
+
+    cell.alphaSpeed = -0.2;
+    cell.alphaRange = 0.5;
+    cell.velocity = 10;
+    cell.velocityRange = 50;
+    cell.emissionRange = M_PI * 2;
+//    cell.color = [UIColor redColor].CGColor;
+//    cell.redRange = 0.5;
+//    cell.greenRange = 0.5;
+//    cell.blueRange = 0.5;
+//    cell.scale = 0.2;
+//    cell.scale = 0.02;
+    cell.emissionLongitude = M_PI;
+    cell.yAcceleration = 70.0;
+//    cell.xAcceleration = 20.0;
+
+    CAEmitterLayer *emitterLayer = [CAEmitterLayer layer];
+    emitterLayer.frame = self.view.bounds;
+    emitterLayer.emitterPosition = CGPointMake(100, -100);//发射位置
+    emitterLayer.birthRate = 1;//粒子产生系数，默认1
+    emitterLayer.emitterSize = CGSizeMake(200, 300);
+//    emitterLayer.emitterShape = kCAEmitterLayerLine;
+//    emitterLayer.emitterMode = kCAEmitterLayerOutline;
+//    emitterLayer.renderMode = kCAEmitterLayerOldestFirst;
+//    emitterLayer.masksToBounds = YES;
+//    emitterLayer.zPosition = -1;
+    emitterLayer.emitterCells = @[cell];
+    [self.view.layer addSublayer:emitterLayer];
 }
 
 #pragma mark - 渐变色

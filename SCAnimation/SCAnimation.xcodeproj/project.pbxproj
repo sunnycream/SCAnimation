@@ -13,6 +13,8 @@
 		84DAC0A421A6497400F9102C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84DAC0A321A6497400F9102C /* Assets.xcassets */; };
 		84DAC0A721A6497400F9102C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84DAC0A521A6497400F9102C /* LaunchScreen.storyboard */; };
 		84DAC0AA21A6497400F9102C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DAC0A921A6497400F9102C /* main.m */; };
+		84F3EF2E21AC10450040D157 /* christmas _tree@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F3EF2C21AC10450040D157 /* christmas _tree@3x.png */; };
+		84F3EF2F21AC10450040D157 /* christmas _tree@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F3EF2D21AC10450040D157 /* christmas _tree@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		84DAC0A621A6497400F9102C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84DAC0A821A6497400F9102C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84DAC0A921A6497400F9102C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		84F3EF2C21AC10450040D157 /* christmas _tree@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "christmas _tree@3x.png"; sourceTree = "<group>"; };
+		84F3EF2D21AC10450040D157 /* christmas _tree@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "christmas _tree@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,8 @@
 				84DAC09B21A6497300F9102C /* AppDelegate.m */,
 				84DAC09D21A6497300F9102C /* ViewController.h */,
 				84DAC09E21A6497300F9102C /* ViewController.m */,
+				84F3EF2D21AC10450040D157 /* christmas _tree@2x.png */,
+				84F3EF2C21AC10450040D157 /* christmas _tree@3x.png */,
 				84DAC0A021A6497300F9102C /* Main.storyboard */,
 				84DAC0A321A6497400F9102C /* Assets.xcassets */,
 				84DAC0A521A6497400F9102C /* LaunchScreen.storyboard */,
@@ -128,9 +134,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84F3EF2E21AC10450040D157 /* christmas _tree@3x.png in Resources */,
 				84DAC0A721A6497400F9102C /* LaunchScreen.storyboard in Resources */,
 				84DAC0A421A6497400F9102C /* Assets.xcassets in Resources */,
 				84DAC0A221A6497300F9102C /* Main.storyboard in Resources */,
+				84F3EF2F21AC10450040D157 /* christmas _tree@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

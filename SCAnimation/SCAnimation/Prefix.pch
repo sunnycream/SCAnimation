@@ -1,0 +1,27 @@
+//
+//  Prefix.pch
+//  SCAnimation
+//
+//  Created by admin on 2018/11/27.
+//  Copyright © 2018 admin. All rights reserved.
+//
+
+#ifndef Prefix_pch
+#define Prefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+/** 屏幕宽高 */
+#define kScreenWidth        [UIScreen mainScreen].bounds.size.width
+#define kScreenHeight       [UIScreen mainScreen].bounds.size.height
+
+/** 状态栏高度 */
+#define kStatusHeight       [[UIApplication sharedApplication] statusBarFrame].size.height
+
+/** 导航栏高度 */
+#define kNavigationHeight   self.navigationController.navigationBar.frame.size.height
+
+
+
+#endif /* Prefix_pch */

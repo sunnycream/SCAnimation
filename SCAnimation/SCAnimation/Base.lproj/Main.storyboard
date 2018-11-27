@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,11 +13,62 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MCb-n0-jJa">
+                                <rect key="frame" x="107.5" y="313.5" width="160" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="Ks1-bj-qtR"/>
+                                    <constraint firstAttribute="height" constant="40" id="X6T-Ou-4Sc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="CoreAnimation">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="coreAnimationAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="32l-Wl-5lz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sPT-J9-YCG">
+                                <rect key="frame" x="107.5" y="380" width="160" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="EmitterAnimation">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="emitterAnimationAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rmd-p3-5WM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vBA-ui-wRd">
+                                <rect key="frame" x="107.5" y="247" width="160" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="UIViewAnimation">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="viewAnimationAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gTe-Pk-m2S"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="MCb-n0-jJa" firstAttribute="height" secondItem="vBA-ui-wRd" secondAttribute="height" id="1hu-hi-70x"/>
+                            <constraint firstItem="sPT-J9-YCG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7X6-1q-YER"/>
+                            <constraint firstItem="vBA-ui-wRd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GNE-IT-Jw3"/>
+                            <constraint firstItem="sPT-J9-YCG" firstAttribute="width" secondItem="MCb-n0-jJa" secondAttribute="width" id="KVY-ia-c6P"/>
+                            <constraint firstItem="vBA-ui-wRd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.8" id="SwN-gP-8Pc"/>
+                            <constraint firstItem="sPT-J9-YCG" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.2" id="p3w-Mo-z1b"/>
+                            <constraint firstItem="MCb-n0-jJa" firstAttribute="width" secondItem="vBA-ui-wRd" secondAttribute="width" id="rOf-1z-Jsg"/>
+                            <constraint firstItem="MCb-n0-jJa" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="rss-DX-NcI"/>
+                            <constraint firstItem="MCb-n0-jJa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sr7-in-4ek"/>
+                            <constraint firstItem="sPT-J9-YCG" firstAttribute="height" secondItem="MCb-n0-jJa" secondAttribute="height" id="xSC-8O-9Hj"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>

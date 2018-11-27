@@ -17,14 +17,12 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
 
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    ViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"ViewController"];
+    UIStoryboard *board = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ViewController *vc = [board instantiateInitialViewController];
 
-    UINavigationController *nav = [[UINavigationController alloc] init];
-
-    [nav pushViewController:vc animated:YES];
-
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
     self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
 

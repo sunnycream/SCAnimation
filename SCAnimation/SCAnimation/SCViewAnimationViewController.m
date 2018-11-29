@@ -8,11 +8,12 @@
 
 #import "SCViewAnimationViewController.h"
 
-@interface SCViewAnimationViewController ()
+@interface SCViewAnimationViewController ()<UIDynamicAnimatorDelegate>
 
 @property (nonatomic, strong) UIView *myView;
-@property (nonatomic, strong) UIView *yourView;
 @property (nonatomic, strong) UILabel *label;
+@property (nonatomic, strong) UIDynamicAnimator *animator;
+@property (nonatomic, strong) UIAttachmentBehavior *attachment;
 
 @end
 
@@ -24,14 +25,13 @@
     self.view.backgroundColor = [UIColor whiteColor];
 
     [self.view addSubview:self.myView];
-//    [self.view addSubview:self.yourView];
 //    [self.view addSubview:self.label];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
 //    [self animation];
 //    [self blockAnimation];
-    [self keyframesAnimation];
+//    [self keyframesAnimation];
 }
 
 #pragma mark - UIViewAnimation
@@ -130,14 +130,6 @@
     if (!_myView) {
         _myView = [[UIView alloc] initWithFrame:CGRectMake(100, 200, 100, 100)];
         _myView.backgroundColor = [UIColor redColor];
-    }
-    return _myView;
-}
-
-- (UIView *)yourView {
-    if (!_yourView) {
-        _yourView = [[UIView alloc] initWithFrame:CGRectMake(100, 200, 100, 100)];
-        _yourView.backgroundColor = [UIColor blackColor];
     }
     return _myView;
 }

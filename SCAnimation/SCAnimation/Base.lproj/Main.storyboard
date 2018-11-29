@@ -55,14 +55,29 @@
                                     <action selector="viewAnimationAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gTe-Pk-m2S"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Q2-Rl-lHQ">
+                                <rect key="frame" x="107.5" y="447" width="160" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="UIDynamic">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="dynamicAnimationAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="THD-tf-QvW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="MCb-n0-jJa" firstAttribute="height" secondItem="vBA-ui-wRd" secondAttribute="height" id="1hu-hi-70x"/>
                             <constraint firstItem="sPT-J9-YCG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7X6-1q-YER"/>
                             <constraint firstItem="vBA-ui-wRd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GNE-IT-Jw3"/>
+                            <constraint firstItem="8Q2-Rl-lHQ" firstAttribute="width" secondItem="MCb-n0-jJa" secondAttribute="width" id="GTa-OR-zHH"/>
                             <constraint firstItem="sPT-J9-YCG" firstAttribute="width" secondItem="MCb-n0-jJa" secondAttribute="width" id="KVY-ia-c6P"/>
+                            <constraint firstItem="8Q2-Rl-lHQ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.4" id="Mzu-hQ-bkw"/>
                             <constraint firstItem="vBA-ui-wRd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.8" id="SwN-gP-8Pc"/>
+                            <constraint firstItem="8Q2-Rl-lHQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gU1-CT-RjS"/>
+                            <constraint firstItem="8Q2-Rl-lHQ" firstAttribute="height" secondItem="MCb-n0-jJa" secondAttribute="height" id="hWz-F5-7Nh"/>
                             <constraint firstItem="sPT-J9-YCG" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.2" id="p3w-Mo-z1b"/>
                             <constraint firstItem="MCb-n0-jJa" firstAttribute="width" secondItem="vBA-ui-wRd" secondAttribute="width" id="rOf-1z-Jsg"/>
                             <constraint firstItem="MCb-n0-jJa" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="rss-DX-NcI"/>

@@ -18,6 +18,7 @@
 		84DAC0A421A6497400F9102C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84DAC0A321A6497400F9102C /* Assets.xcassets */; };
 		84DAC0A721A6497400F9102C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84DAC0A521A6497400F9102C /* LaunchScreen.storyboard */; };
 		84DAC0AA21A6497400F9102C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DAC0A921A6497400F9102C /* main.m */; };
+		84F6474321AFE836003CE863 /* SCDynamicAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F6474221AFE836003CE863 /* SCDynamicAnimationViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,8 @@
 		84DAC0A621A6497400F9102C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84DAC0A821A6497400F9102C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84DAC0A921A6497400F9102C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		84F6474121AFE836003CE863 /* SCDynamicAnimationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCDynamicAnimationViewController.h; sourceTree = "<group>"; };
+		84F6474221AFE836003CE863 /* SCDynamicAnimationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCDynamicAnimationViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +94,8 @@
 				84AE11DA21AD2D5300A7CC1E /* SCCoreAnimationViewController.m */,
 				84AE11DC21AD2DF300A7CC1E /* SCEmitterAnimationViewController.h */,
 				84AE11E821AD38FE00A7CC1E /* SCEmitterAnimationViewController.m */,
+				84F6474121AFE836003CE863 /* SCDynamicAnimationViewController.h */,
+				84F6474221AFE836003CE863 /* SCDynamicAnimationViewController.m */,
 				84AE11EA21AD3C3F00A7CC1E /* Prefix.pch */,
 				84AE11DF21AD317800A7CC1E /* Image */,
 				84DAC0A021A6497300F9102C /* Main.storyboard */,
@@ -177,6 +182,7 @@
 				84AE11DB21AD2D5300A7CC1E /* SCCoreAnimationViewController.m in Sources */,
 				84DAC09F21A6497300F9102C /* ViewController.m in Sources */,
 				84DAC0AA21A6497400F9102C /* main.m in Sources */,
+				84F6474321AFE836003CE863 /* SCDynamicAnimationViewController.m in Sources */,
 				84AE11D821AD1B4F00A7CC1E /* SCViewAnimationViewController.m in Sources */,
 				84AE11E921AD38FE00A7CC1E /* SCEmitterAnimationViewController.m in Sources */,
 				84DAC09C21A6497300F9102C /* AppDelegate.m in Sources */,

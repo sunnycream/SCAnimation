@@ -10,6 +10,7 @@
 #import "SCViewAnimationViewController.h"
 #import "SCCoreAnimationViewController.h"
 #import "SCEmitterAnimationViewController.h"
+#import "SCDynamicAnimationViewController.h"
 
 @interface ViewController ()
 
@@ -40,6 +41,13 @@
     SCEmitterAnimationViewController *emitterAnimationVC = [[SCEmitterAnimationViewController alloc] init];
     emitterAnimationVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:emitterAnimationVC animated:YES];
+}
+
+//仿真动画
+- (IBAction)dynamicAnimationAction:(id)sender {
+    SCDynamicAnimationViewController *dynamicAnimationVC = [[SCDynamicAnimationViewController alloc] init];
+    dynamicAnimationVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:dynamicAnimationVC animated:YES];
 }
 
 

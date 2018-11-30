@@ -12,6 +12,13 @@
 		84AE11E421AD37F200A7CC1E /* christmas_hat@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84AE11E021AD37F200A7CC1E /* christmas_hat@3x.png */; };
 		84AE11E521AD37F200A7CC1E /* christmas_hat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84AE11E121AD37F200A7CC1E /* christmas_hat@2x.png */; };
 		84AE11E921AD38FE00A7CC1E /* SCEmitterAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AE11E821AD38FE00A7CC1E /* SCEmitterAnimationViewController.m */; };
+		84B41F9321B122CC0071550B /* SCShineButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B41F9221B122CC0071550B /* SCShineButtonViewController.m */; };
+		84B41F9A21B124BB0071550B /* like_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B41F9921B124BB0071550B /* like_normal@2x.png */; };
+		84B41F9D21B136870071550B /* point@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B41F9B21B136870071550B /* point@3x.png */; };
+		84B41F9E21B136870071550B /* point@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B41F9C21B136870071550B /* point@2x.png */; };
+		84B41FA021B15B380071550B /* like_normal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B41F9F21B15B380071550B /* like_normal@3x.png */; };
+		84B41FA321B15BB50071550B /* like_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B41FA121B15BB50071550B /* like_selected@2x.png */; };
+		84B41FA421B15BB50071550B /* like_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B41FA221B15BB50071550B /* like_selected@3x.png */; };
 		84DAC09C21A6497300F9102C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DAC09B21A6497300F9102C /* AppDelegate.m */; };
 		84DAC09F21A6497300F9102C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DAC09E21A6497300F9102C /* ViewController.m */; };
 		84DAC0A221A6497300F9102C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84DAC0A021A6497300F9102C /* Main.storyboard */; };
@@ -31,6 +38,14 @@
 		84AE11E121AD37F200A7CC1E /* christmas_hat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "christmas_hat@2x.png"; sourceTree = "<group>"; };
 		84AE11E821AD38FE00A7CC1E /* SCEmitterAnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCEmitterAnimationViewController.m; sourceTree = "<group>"; };
 		84AE11EA21AD3C3F00A7CC1E /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
+		84B41F9121B122CC0071550B /* SCShineButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCShineButtonViewController.h; sourceTree = "<group>"; };
+		84B41F9221B122CC0071550B /* SCShineButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCShineButtonViewController.m; sourceTree = "<group>"; };
+		84B41F9921B124BB0071550B /* like_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "like_normal@2x.png"; sourceTree = "<group>"; };
+		84B41F9B21B136870071550B /* point@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "point@3x.png"; sourceTree = "<group>"; };
+		84B41F9C21B136870071550B /* point@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "point@2x.png"; sourceTree = "<group>"; };
+		84B41F9F21B15B380071550B /* like_normal@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "like_normal@3x.png"; sourceTree = "<group>"; };
+		84B41FA121B15BB50071550B /* like_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "like_selected@2x.png"; sourceTree = "<group>"; };
+		84B41FA221B15BB50071550B /* like_selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "like_selected@3x.png"; sourceTree = "<group>"; };
 		84DAC09721A6497300F9102C /* SCAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SCAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84DAC09A21A6497300F9102C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		84DAC09B21A6497300F9102C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -61,6 +76,12 @@
 			children = (
 				84AE11E121AD37F200A7CC1E /* christmas_hat@2x.png */,
 				84AE11E021AD37F200A7CC1E /* christmas_hat@3x.png */,
+				84B41F9921B124BB0071550B /* like_normal@2x.png */,
+				84B41F9F21B15B380071550B /* like_normal@3x.png */,
+				84B41FA121B15BB50071550B /* like_selected@2x.png */,
+				84B41FA221B15BB50071550B /* like_selected@3x.png */,
+				84B41F9C21B136870071550B /* point@2x.png */,
+				84B41F9B21B136870071550B /* point@3x.png */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -96,6 +117,8 @@
 				84AE11E821AD38FE00A7CC1E /* SCEmitterAnimationViewController.m */,
 				84F6474121AFE836003CE863 /* SCDynamicAnimationViewController.h */,
 				84F6474221AFE836003CE863 /* SCDynamicAnimationViewController.m */,
+				84B41F9121B122CC0071550B /* SCShineButtonViewController.h */,
+				84B41F9221B122CC0071550B /* SCShineButtonViewController.m */,
 				84AE11EA21AD3C3F00A7CC1E /* Prefix.pch */,
 				84AE11DF21AD317800A7CC1E /* Image */,
 				84DAC0A021A6497300F9102C /* Main.storyboard */,
@@ -168,6 +191,12 @@
 				84DAC0A421A6497400F9102C /* Assets.xcassets in Resources */,
 				84AE11E521AD37F200A7CC1E /* christmas_hat@2x.png in Resources */,
 				84DAC0A221A6497300F9102C /* Main.storyboard in Resources */,
+				84B41FA321B15BB50071550B /* like_selected@2x.png in Resources */,
+				84B41F9D21B136870071550B /* point@3x.png in Resources */,
+				84B41F9A21B124BB0071550B /* like_normal@2x.png in Resources */,
+				84B41F9E21B136870071550B /* point@2x.png in Resources */,
+				84B41FA421B15BB50071550B /* like_selected@3x.png in Resources */,
+				84B41FA021B15B380071550B /* like_normal@3x.png in Resources */,
 				84AE11E421AD37F200A7CC1E /* christmas_hat@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -179,6 +208,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84B41F9321B122CC0071550B /* SCShineButtonViewController.m in Sources */,
 				84AE11DB21AD2D5300A7CC1E /* SCCoreAnimationViewController.m in Sources */,
 				84DAC09F21A6497300F9102C /* ViewController.m in Sources */,
 				84DAC0AA21A6497400F9102C /* main.m in Sources */,

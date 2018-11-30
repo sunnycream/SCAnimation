@@ -11,6 +11,7 @@
 #import "SCCoreAnimationViewController.h"
 #import "SCEmitterAnimationViewController.h"
 #import "SCDynamicAnimationViewController.h"
+#import "SCShineButtonViewController.h"
 
 @interface ViewController ()
 
@@ -48,6 +49,12 @@
     SCDynamicAnimationViewController *dynamicAnimationVC = [[SCDynamicAnimationViewController alloc] init];
     dynamicAnimationVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:dynamicAnimationVC animated:YES];
+}
+
+- (IBAction)shineButtonAnimationAction:(id)sender {
+    SCShineButtonViewController *shineButtonVC = [[SCShineButtonViewController alloc] init];
+    shineButtonVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:shineButtonVC animated:YES];
 }
 
 

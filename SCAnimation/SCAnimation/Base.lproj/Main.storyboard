@@ -66,6 +66,17 @@
                                     <action selector="dynamicAnimationAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="THD-tf-QvW"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uu7-xg-uiU">
+                                <rect key="frame" x="107.5" y="513.5" width="160" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="ShineButton">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="shineButtonAnimationAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ft4-zb-dW2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -73,12 +84,16 @@
                             <constraint firstItem="sPT-J9-YCG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7X6-1q-YER"/>
                             <constraint firstItem="vBA-ui-wRd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GNE-IT-Jw3"/>
                             <constraint firstItem="8Q2-Rl-lHQ" firstAttribute="width" secondItem="MCb-n0-jJa" secondAttribute="width" id="GTa-OR-zHH"/>
+                            <constraint firstItem="uu7-xg-uiU" firstAttribute="height" secondItem="MCb-n0-jJa" secondAttribute="height" id="Hkc-Jz-Kcl"/>
                             <constraint firstItem="sPT-J9-YCG" firstAttribute="width" secondItem="MCb-n0-jJa" secondAttribute="width" id="KVY-ia-c6P"/>
                             <constraint firstItem="8Q2-Rl-lHQ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.4" id="Mzu-hQ-bkw"/>
                             <constraint firstItem="vBA-ui-wRd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.8" id="SwN-gP-8Pc"/>
+                            <constraint firstItem="uu7-xg-uiU" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.6" id="b2z-fp-jqV"/>
                             <constraint firstItem="8Q2-Rl-lHQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gU1-CT-RjS"/>
                             <constraint firstItem="8Q2-Rl-lHQ" firstAttribute="height" secondItem="MCb-n0-jJa" secondAttribute="height" id="hWz-F5-7Nh"/>
+                            <constraint firstItem="uu7-xg-uiU" firstAttribute="width" secondItem="MCb-n0-jJa" secondAttribute="width" id="lCb-Cp-dZt"/>
                             <constraint firstItem="sPT-J9-YCG" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.2" id="p3w-Mo-z1b"/>
+                            <constraint firstItem="uu7-xg-uiU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pXK-it-xDk"/>
                             <constraint firstItem="MCb-n0-jJa" firstAttribute="width" secondItem="vBA-ui-wRd" secondAttribute="width" id="rOf-1z-Jsg"/>
                             <constraint firstItem="MCb-n0-jJa" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="rss-DX-NcI"/>
                             <constraint firstItem="MCb-n0-jJa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sr7-in-4ek"/>
@@ -89,6 +104,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="53.600000000000001" y="26.53673163418291"/>
         </scene>
     </scenes>
 </document>

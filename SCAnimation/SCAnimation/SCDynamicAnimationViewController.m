@@ -71,7 +71,14 @@
 }
 
 - (void)attachment {
-
+//    UIAttachmentBehavior *attachment = [[UIAttachmentBehavior alloc] initWithItem:self.myView attachedToAnchor:CGPointMake(150, 600)];
+//    UIAttachmentBehavior *attachment = [[UIAttachmentBehavior alloc] initWithItem:self.myView offsetFromCenter:UIOffsetMake(25, 0) attachedToAnchor:CGPointMake(150, 600)];
+//    UIAttachmentBehavior *attachment = [[UIAttachmentBehavior alloc] initWithItem:self.myView attachedToItem:self.yourView];
+    UIAttachmentBehavior *attachment = [[UIAttachmentBehavior alloc] initWithItem:self.myView offsetFromCenter:UIOffsetMake(25, 0) attachedToItem:self.yourView offsetFromCenter:UIOffsetMake(-35, 0)];
+    attachment.length = 50;
+    attachment.damping = 0.5;
+    attachment.frequency = 1;
+    [self.animator addBehavior:attachment];
 }
 
 //碰撞行为
@@ -111,9 +118,13 @@
 }
 
 - (void)snap {
-    UISnapBehavior *snap = [[UISnapBehavior alloc] initWithItem:self.myView snapToPoint:CGPointMake(200, 600)];
-    snap.damping = 0.3;
-    [self.animator addBehavior:snap];
+    UISnapBehavior *snap1 = [[UISnapBehavior alloc] initWithItem:self.myView snapToPoint:CGPointMake(100, 600)];
+    snap1.damping = 0.3;
+    [self.animator addBehavior:snap1];
+
+    UISnapBehavior *snap2 = [[UISnapBehavior alloc] initWithItem:self.yourView snapToPoint:CGPointMake(250, 200)];
+    snap2.damping = 0.3;
+    [self.animator addBehavior:snap2];
 }
 
 - (void)dynamicItem {
@@ -170,7 +181,7 @@
             break;
         }
         case 2:{
-//            [self attachment];
+            [self attachment];
             break;
         }
         case 3:{

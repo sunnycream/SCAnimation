@@ -25,39 +25,21 @@
 
     [self.view addSubview:self.myView];
     [self.view addSubview:self.yourView];
-    [self buttons];
-
-    self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
-    self.animator.delegate = self;
-
-    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(pan:)];
-    [self.myView addGestureRecognizer:pan];
+    [self setupButtons];
 }
 
-
-//start
+#pragma mark - UIDynamicAnimatorDelegate
 - (void)dynamicAnimatorWillResume:(UIDynamicAnimator *)animator {
     NSLog(@"start--------------");
 }
 
-//stop
 - (void)dynamicAnimatorDidPause:(UIDynamicAnimator *)animator {
      NSLog(@"stop--------------");
 }
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self gravity];
-//    [self collision];
-    //attachment
-//    [self push];
-//    [self snap];
-//    [self dynamicItem];
-}
-
-//重力行为
+#pragma mark - UIDynamicBehavior
 - (void)gravity {
     UIGravityBehavior *gravity = [[UIGravityBehavior alloc] initWithItems:@[self.myView]];
-
     /*      (dx, dy)
 
             top:    (0, -1)
@@ -81,7 +63,6 @@
     [self.animator addBehavior:attachment];
 }
 
-//碰撞行为
 - (void)collision {
     [self gravity];
 
@@ -91,20 +72,6 @@
     [self.animator addBehavior:collision];
 }
 
-- (void)pan:(UIPanGestureRecognizer *)panGestureRecognizer {
-    UIAttachmentBehavior *attachment;
-    CGPoint point = [panGestureRecognizer locationInView:self.view];
-    if (panGestureRecognizer.state == UIGestureRecognizerStateBegan) {
-         attachment = [[UIAttachmentBehavior alloc] initWithItem:self.myView attachedToAnchor:point];
-        [self.animator addBehavior:attachment];
-    } else if (panGestureRecognizer.state == UIGestureRecognizerStateChanged) {
-        attachment.anchorPoint = point;
-    } else if (panGestureRecognizer.state == UIGestureRecognizerStateEnded) {
-        [self.animator removeBehavior:attachment];
-    }
-}
-
-//推动行为
 - (void)push {
     UIPushBehavior *push = [[UIPushBehavior alloc] initWithItems:@[self.myView] mode:UIPushBehaviorModeContinuous];
     push.pushDirection = CGVectorMake(0, 1);
@@ -129,11 +96,12 @@
 
 - (void)dynamicItem {
     UIDynamicItemBehavior *dynamicItem = [[UIDynamicItemBehavior alloc] initWithItems:@[self.myView]];
-    dynamicItem.elasticity = 0.6;
-    dynamicItem.friction = 1;
-    dynamicItem.density = 10;
-    dynamicItem.resistance = 10;
+    dynamicItem.elasticity = 0.6;//弹性（0-1），值越大，弹性越强，弹跳的时间越长
+    dynamicItem.friction = 1;//摩擦力
+    dynamicItem.density = 1;//密度
+//    dynamicItem.resistance = 3;//阻力，阻力越大，速度越慢
     dynamicItem.allowsRotation = YES;
+    [dynamicItem addAngularVelocity:1 forItem:self.myView];
     [self.animator addBehavior:dynamicItem];
 
     UIGravityBehavior *gravity = [[UIGravityBehavior alloc] initWithItems:@[self.myView]];
@@ -141,13 +109,14 @@
     gravity.magnitude = 0.5;
     [self.animator addBehavior:gravity];
 
-    UICollisionBehavior *collision = [[UICollisionBehavior alloc] initWithItems:@[self.myView, self.yourView]];
+    UICollisionBehavior *collision = [[UICollisionBehavior alloc] initWithItems:@[self.myView]];
     collision.translatesReferenceBoundsIntoBoundary = YES;
     collision.collisionMode = UICollisionBehaviorModeEverything;
     [self.animator addBehavior:collision];
 }
 
-- (void)buttons {
+#pragma mark - buttons
+- (void)setupButtons {
     NSArray *array = @[@{@"title": @"gravity"},
                        @{@"title": @"collision"},
                        @{@"title": @"attachment"},
@@ -201,12 +170,12 @@
     }
 }
 
+#pragma mark - lazy load
 - (UIView *)myView {
     if (!_myView) {
         _myView = [[UIView alloc] initWithFrame:CGRectMake(200, 120, 100, 100)];
         _myView.backgroundColor = [UIColor greenColor];
         _myView.transform =CGAffineTransformMakeRotation(M_PI_4);//旋转45度
-        _myView.userInteractionEnabled = YES;
     }
     return _myView;
 }
@@ -217,6 +186,14 @@
         _yourView.backgroundColor = [UIColor orangeColor];
     }
     return _yourView;
+}
+
+- (UIDynamicAnimator *)animator {
+    if (!_animator) {
+        _animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
+        _animator.delegate = self;
+    }
+    return _animator;
 }
 
 /*

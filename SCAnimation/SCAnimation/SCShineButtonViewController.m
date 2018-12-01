@@ -27,12 +27,11 @@
 }
 
 - (void)clickAction {
-    NSValue *value1 = [NSNumber numberWithFloat:0.5];
-    NSValue *value2 = [NSNumber numberWithFloat:1.5];
-
     //button缩放
     CAKeyframeAnimation *animation1 = [CAKeyframeAnimation animationWithKeyPath:@"transform.scale"];
     animation1.duration = 0.5;
+    NSValue *value1 = [NSNumber numberWithFloat:0.5];
+    NSValue *value2 = [NSNumber numberWithFloat:1.5];
     animation1.values = [NSArray arrayWithObjects:value1, value2, nil];
     [self.button.layer addAnimation:animation1 forKey:@"transform"];
 
@@ -40,7 +39,9 @@
     CAKeyframeAnimation *animation2 = [CAKeyframeAnimation animationWithKeyPath:@"transform.scale"];
     animation2.delegate = self;
     animation2.duration = 0.5;
-    animation2.values = [NSArray arrayWithObjects:value1, value2, nil];
+    NSValue *value3 = [NSNumber numberWithFloat:0.5];
+    NSValue *value4 = [NSNumber numberWithFloat:3.0];
+    animation2.values = [NSArray arrayWithObjects:value3, value4, nil];
     [self.circleLayer addAnimation:animation2 forKey:@"transform"];
 
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -106,9 +107,9 @@
 - (CAShapeLayer *)circleLayer {
     if (!_circleLayer) {
         _circleLayer = [CAShapeLayer layer];
-        _circleLayer.frame = CGRectMake(-10, -10, 60, 60);
+        _circleLayer.frame = CGRectMake(10, 10, 20, 20);
         _circleLayer.borderColor = [UIColor redColor].CGColor;
-        _circleLayer.borderWidth = 2.0;
+        _circleLayer.borderWidth = 1.0;
         _circleLayer.cornerRadius = _circleLayer.frame.size.width / 2;
         [self.button.layer addSublayer:_circleLayer];
     }

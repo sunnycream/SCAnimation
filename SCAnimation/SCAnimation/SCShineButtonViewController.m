@@ -10,9 +10,11 @@
 
 @interface SCShineButtonViewController ()<CAAnimationDelegate>
 
-@property (nonatomic, strong)  UIButton *button;
+@property (nonatomic, strong) UIButton *button;
 @property (nonatomic, strong) CAShapeLayer *circleLayer;
 @property (nonatomic, strong) CAEmitterLayer *emitterLayer;
+
+@property (nonatomic, strong)  UIButton *wishButton;
 
 @end
 
@@ -24,6 +26,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
 
     [self.view addSubview:self.button];
+    [self setupWishButton];
 }
 
 - (void)clickAction {
@@ -116,6 +119,29 @@
     return _circleLayer;
 }
 
+- (void)setupWishButton {
+    NSArray *array = @[@{@"title": @"圣"},
+                       @{@"title": @"诞"},
+                       @{@"title": @"快"},
+                       @{@"title": @"乐"}];
+
+    for (int i = 0; i < 4; i++) {
+        UIButton *wishButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.wishButton = wishButton;
+        wishButton.tag = i;
+        wishButton.backgroundColor = [UIColor redColor];
+        wishButton.titleLabel.font = [UIFont boldSystemFontOfSize:20];
+        [wishButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [self.view addSubview:wishButton];
+
+        NSDictionary *dic = array[i];
+        wishButton.frame = CGRectMake(i * 50 + 100, -100, 40, 40);
+        [wishButton setTitle:dic[@"title"] forState:UIControlStateNormal];
+
+        wishButton.layer.cornerRadius = wishButton.frame.size.width / 2;
+        wishButton.clipsToBounds = YES;
+    }
+}
 
 
 /*

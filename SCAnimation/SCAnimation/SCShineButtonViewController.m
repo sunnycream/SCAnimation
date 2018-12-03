@@ -14,8 +14,6 @@
 @property (nonatomic, strong) CAShapeLayer *circleLayer;
 @property (nonatomic, strong) CAEmitterLayer *emitterLayer;
 
-@property (nonatomic, strong)  UIButton *wishButton;
-
 @end
 
 @implementation SCShineButtonViewController
@@ -26,36 +24,39 @@
     self.view.backgroundColor = [UIColor whiteColor];
 
     [self.view addSubview:self.button];
-    [self setupWishButton];
 }
 
-- (void)clickAction {
-    //button缩放
-    CAKeyframeAnimation *animation1 = [CAKeyframeAnimation animationWithKeyPath:@"transform.scale"];
-    animation1.duration = 0.5;
-    NSValue *value1 = [NSNumber numberWithFloat:0.5];
-    NSValue *value2 = [NSNumber numberWithFloat:1.5];
-    animation1.values = [NSArray arrayWithObjects:value1, value2, nil];
-    [self.button.layer addAnimation:animation1 forKey:@"transform"];
+- (void)clickAction:(UIButton *)button {
+    button.selected = !button.selected;
 
-    //圆环缩放
-    CAKeyframeAnimation *animation2 = [CAKeyframeAnimation animationWithKeyPath:@"transform.scale"];
-    animation2.delegate = self;
-    animation2.duration = 0.5;
-    NSValue *value3 = [NSNumber numberWithFloat:0.5];
-    NSValue *value4 = [NSNumber numberWithFloat:3.0];
-    animation2.values = [NSArray arrayWithObjects:value3, value4, nil];
-    [self.circleLayer addAnimation:animation2 forKey:@"transform"];
+    if (button.selected) {
+        [self.button.layer addSublayer:self.circleLayer];
 
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        //粒子动画
-        [self emitter];
-    });
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self.emitterLayer removeFromSuperlayer];
-        self.button.userInteractionEnabled = NO;
-        [self.button setBackgroundImage:[UIImage imageNamed:@"like_selected"] forState:UIControlStateNormal];
-    });
+        //button缩放
+        CAKeyframeAnimation *animation1 = [CAKeyframeAnimation animationWithKeyPath:@"transform.scale"];
+        animation1.duration = 0.5;
+        NSValue *value1 = [NSNumber numberWithFloat:0.5];
+        NSValue *value2 = [NSNumber numberWithFloat:1.5];
+        animation1.values = [NSArray arrayWithObjects:value1, value2, nil];
+        [self.button.layer addAnimation:animation1 forKey:@"transform"];
+
+        //圆环缩放
+        CAKeyframeAnimation *animation2 = [CAKeyframeAnimation animationWithKeyPath:@"transform.scale"];
+        animation2.delegate = self;
+        animation2.duration = 0.5;
+        NSValue *value3 = [NSNumber numberWithFloat:0.5];
+        NSValue *value4 = [NSNumber numberWithFloat:2.0];
+        animation2.values = [NSArray arrayWithObjects:value3, value4, nil];
+        [self.circleLayer addAnimation:animation2 forKey:@"transform"];
+
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            //粒子动画
+            [self emitter];
+        });
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.52* NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self.emitterLayer removeFromSuperlayer];
+        });
+    }
 }
 
 //粒子动画
@@ -87,10 +88,6 @@
 }
 
 #pragma mark - CAAnimationDelegate
-//- (void)animationDidStart:(CAAnimation *)anim {
-//    [self.view.layer addSublayer:self.button.layer];
-//}
-
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
     [self.circleLayer removeFromSuperlayer];
 }
@@ -101,8 +98,8 @@
         _button = [UIButton buttonWithType:UIButtonTypeCustom];
         _button.frame = CGRectMake(100, 300, 40, 40);
         [_button setBackgroundImage:[UIImage imageNamed:@"like_normal"] forState:UIControlStateNormal];
-        [_button addTarget:self action:@selector(clickAction) forControlEvents:UIControlEventTouchUpInside];
-//        [self.view addSubview:_button];
+        [_button setBackgroundImage:[UIImage imageNamed:@"like_selected"] forState:UIControlStateSelected];
+        [_button addTarget:self action:@selector(clickAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _button;
 }
@@ -114,33 +111,8 @@
         _circleLayer.borderColor = [UIColor redColor].CGColor;
         _circleLayer.borderWidth = 1.0;
         _circleLayer.cornerRadius = _circleLayer.frame.size.width / 2;
-        [self.button.layer addSublayer:_circleLayer];
     }
     return _circleLayer;
-}
-
-- (void)setupWishButton {
-    NSArray *array = @[@{@"title": @"圣"},
-                       @{@"title": @"诞"},
-                       @{@"title": @"快"},
-                       @{@"title": @"乐"}];
-
-    for (int i = 0; i < 4; i++) {
-        UIButton *wishButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        self.wishButton = wishButton;
-        wishButton.tag = i;
-        wishButton.backgroundColor = [UIColor redColor];
-        wishButton.titleLabel.font = [UIFont boldSystemFontOfSize:20];
-        [wishButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [self.view addSubview:wishButton];
-
-        NSDictionary *dic = array[i];
-        wishButton.frame = CGRectMake(i * 50 + 100, -100, 40, 40);
-        [wishButton setTitle:dic[@"title"] forState:UIControlStateNormal];
-
-        wishButton.layer.cornerRadius = wishButton.frame.size.width / 2;
-        wishButton.clipsToBounds = YES;
-    }
 }
 
 
